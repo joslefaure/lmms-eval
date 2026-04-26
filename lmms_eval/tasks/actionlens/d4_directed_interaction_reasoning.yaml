@@ -1,0 +1,16 @@
+# ActionLens — D4: Directed Interaction Reasoning
+# Infers the direction of an interaction between two people (who acts on whom).
+
+task: d4_directed_interaction_reasoning
+test_split: test
+include: _default_template_yaml
+
+dataset_path: json
+dataset_kwargs:
+  data_files:
+    test: "hf://datasets/anonymous-dataset-submission/actionlens/dataset/4_interaction_reasoning.json"
+
+metadata:
+  - version: 1.0
+  - diagnostic_id: "D4"
+  - diagnostic_name: "Directed Interaction Reasoning"

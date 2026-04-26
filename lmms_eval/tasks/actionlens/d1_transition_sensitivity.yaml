@@ -1,0 +1,16 @@
+# ActionLens — D1: Transition Sensitivity
+# Asks which action transition a person (in a bounding box) undergoes in the clip.
+
+task: d1_transition_sensitivity
+test_split: test
+include: _default_template_yaml
+
+dataset_path: json
+dataset_kwargs:
+  data_files:
+    test: "hf://datasets/anonymous-dataset-submission/actionlens/dataset/1_transition_sensitivity.json"
+
+metadata:
+  - version: 1.0
+  - diagnostic_id: "D1"
+  - diagnostic_name: "Transition Sensitivity"

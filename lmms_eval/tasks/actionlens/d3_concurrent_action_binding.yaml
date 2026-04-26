@@ -1,0 +1,16 @@
+# ActionLens — D3: Concurrent Action Binding
+# Identifies which actions co-occur simultaneously in the clip.
+
+task: d3_concurrent_action_binding
+test_split: test
+include: _default_template_yaml
+
+dataset_path: json
+dataset_kwargs:
+  data_files:
+    test: "hf://datasets/anonymous-dataset-submission/actionlens/dataset/3_concurrent_binding.json"
+
+metadata:
+  - version: 1.0
+  - diagnostic_id: "D3"
+  - diagnostic_name: "Concurrent Action Binding"

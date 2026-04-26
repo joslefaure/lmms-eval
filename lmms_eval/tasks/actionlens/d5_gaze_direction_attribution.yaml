@@ -1,0 +1,16 @@
+# ActionLens — D5: Gaze Direction Attribution
+# Identifies the target of a person's gaze direction.
+
+task: d5_gaze_direction_attribution
+test_split: test
+include: _default_template_yaml
+
+dataset_path: json
+dataset_kwargs:
+  data_files:
+    test: "hf://datasets/anonymous-dataset-submission/actionlens/dataset/5_gaze_detection.json"
+
+metadata:
+  - version: 1.0
+  - diagnostic_id: "D5"
+  - diagnostic_name: "Gaze Direction Attribution"

@@ -1,0 +1,10 @@
+# ActionLens — evaluation group
+# Run all 5 diagnostics with: --tasks actionlens
+
+group: actionlens
+task:
+  - d1_transition_sensitivity
+  - d2_actor_action_disambiguation
+  - d3_concurrent_action_binding
+  - d4_directed_interaction_reasoning
+  - d5_gaze_direction_attribution
