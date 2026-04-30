@@ -25,6 +25,33 @@
 
 ---
 
+## ActionLens Benchmark (NeurIPS Submission)
+
+> **For paper reviewers:** this repository contains the full evaluation code for the ActionLens benchmark. A self-contained script reproduces all results reported in the paper.
+
+### Quick reproduction
+
+```bash
+# 1. Clone and install
+git clone <this-repo-url>
+cd lmms-eval && pip install -e ".[all]"
+
+# 2. Run the full ActionLens benchmark (D1–D5) — videos download automatically
+bash examples/eval_actionlens.sh
+
+# 3. Run a single diagnostic (e.g. D1 only)
+TASKS=d1_transition_sensitivity bash examples/eval_actionlens.sh
+
+# 4. Smoke-test with 10 samples
+LIMIT=10 bash examples/eval_actionlens.sh
+```
+
+The script [`examples/eval_actionlens.sh`](examples/eval_actionlens.sh) accepts environment variables to override the model, tasks, device, and output directory — see the comments at the top of the file for the full list.
+
+Task configs live in [`lmms_eval/tasks/actionlens/`](lmms_eval/tasks/actionlens/) and results are written to `outputs/actionlens/` by default.
+
+---
+
 ## Why `lmms-eval`?
 
 Benchmarks decide what gets built next. A model team that trusts its eval numbers can focus on real improvements instead of chasing noise. But the multimodal evaluation ecosystem is fragmented - scattered datasets, inconsistent post-processing, and single-number accuracy scores that hide whether a gain is real or random. Two teams evaluating the same model on the same benchmark routinely report different results.
