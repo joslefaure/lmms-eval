@@ -25,7 +25,7 @@
 
 ---
 
-## ActionLens Benchmark (NeurIPS Submission)
+## ActionLens Benchmark
 
 > **For paper reviewers:** this repository contains the full evaluation code for the ActionLens benchmark. A self-contained script reproduces all results reported in the paper.
 
