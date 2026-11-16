@@ -1,0 +1,574 @@
+{
+  "results": {
+    "actionlens": {
+      "actionlens_accuracy,none": 0.49231457991344574,
+      "actionlens_accuracy_stderr,none": "N/A",
+      "alias": "actionlens"
+    },
+    "d1_transition_sensitivity": {
+      "alias": " - d1_transition_sensitivity",
+      "actionlens_accuracy,none": 0.520618556701031,
+      "actionlens_accuracy_stderr,none": "N/A",
+      "actionlens_accuracy_stderr_clt,none": "N/A",
+      "actionlens_accuracy_stderr_clustered,none": "N/A"
+    },
+    "d2_actor_action_disambiguation": {
+      "alias": " - d2_actor_action_disambiguation",
+      "actionlens_accuracy,none": 0.479,
+      "actionlens_accuracy_stderr,none": "N/A",
+      "actionlens_accuracy_stderr_clt,none": "N/A",
+      "actionlens_accuracy_stderr_clustered,none": "N/A"
+    },
+    "d3_concurrent_action_binding": {
+      "alias": " - d3_concurrent_action_binding",
+      "actionlens_accuracy,none": 0.6455,
+      "actionlens_accuracy_stderr,none": "N/A",
+      "actionlens_accuracy_stderr_clt,none": "N/A",
+      "actionlens_accuracy_stderr_clustered,none": "N/A"
+    },
+    "d4_directed_interaction_reasoning": {
+      "alias": " - d4_directed_interaction_reasoning",
+      "actionlens_accuracy,none": 0.43202979515828677,
+      "actionlens_accuracy_stderr,none": "N/A",
+      "actionlens_accuracy_stderr_clt,none": "N/A",
+      "actionlens_accuracy_stderr_clustered,none": "N/A"
+    },
+    "d5_gaze_direction_attribution": {
+      "alias": " - d5_gaze_direction_attribution",
+      "actionlens_accuracy,none": 0.28236607142857145,
+      "actionlens_accuracy_stderr,none": "N/A",
+      "actionlens_accuracy_stderr_clt,none": "N/A",
+      "actionlens_accuracy_stderr_clustered,none": "N/A"
+    }
+  },
+  "groups": {
+    "actionlens": {
+      "actionlens_accuracy,none": 0.49231457991344574,
+      "actionlens_accuracy_stderr,none": "N/A",
+      "alias": "actionlens"
+    }
+  },
+  "group_subtasks": {
+    "actionlens": [
+      "d1_transition_sensitivity",
+      "d2_actor_action_disambiguation",
+      "d3_concurrent_action_binding",
+      "d4_directed_interaction_reasoning",
+      "d5_gaze_direction_attribution"
+    ]
+  },
+  "configs": {
+    "d1_transition_sensitivity": {
+      "task": "d1_transition_sensitivity",
+      "dataset_path": "json",
+      "dataset_kwargs": {
+        "data_files": {
+          "train": "hf://datasets/anonymous-dataset-submission/actionlens/dataset/1_transition_sensitivity.json"
+        }
+      },
+      "test_split": "train",
+      "full_docs": false,
+      "process_results_use_image": false,
+      "doc_to_visual": "<function actionlens_doc_to_visual at 0x147b0b15f7e0>",
+      "doc_to_text": "<function actionlens_doc_to_text at 0x147b0ad64860>",
+      "doc_to_target": "<function get_answer_letter at 0x147b0ad65580>",
+      "process_results": "<function actionlens_process_results at 0x147b0ad662a0>",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "actionlens_accuracy",
+          "aggregation": "<function actionlens_aggregate_results at 0x147b0ad66fc0>",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "max_new_tokens": 16,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "num_beams": 1,
+        "do_sample": false,
+        "until": [
+          "\n\n"
+        ]
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "score_key": "score",
+      "metadata": {
+        "version": 1.0,
+        "benchmark_name": "ActionLens",
+        "diagnostic_id": "D1",
+        "stable_id": "d1_transition_sensitivity",
+        "task_name": "Transition Sensitivity",
+        "public_display_name": "ActionLens-D1 Transition Sensitivity",
+        "first_mention": "ActionLens-D1 Transition Sensitivity (d1_transition_sensitivity)",
+        "media_type": "video",
+        "description": "Diagnose model sensitivity to action state transitions"
+      },
+      "lmms_eval_specific_kwargs": {
+        "default": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "gpt4v": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer the question with A, B, C, or D."
+        },
+        "llava": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "qwen_vl": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "qwen2_vl": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "internvl": {
+          "pre_prompt": "",
+          "post_prompt": "\nRespond with only the letter of the correct answer."
+        },
+        "videollama": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "pre_prompt": "",
+        "post_prompt": "\nAnswer with the option letter only."
+      }
+    },
+    "d2_actor_action_disambiguation": {
+      "task": "d2_actor_action_disambiguation",
+      "dataset_path": "json",
+      "dataset_kwargs": {
+        "data_files": {
+          "train": "data/actionlens_data_rebuild/datasets/task_2_2_action_disambiguation_no_context.json"
+        }
+      },
+      "test_split": "train",
+      "full_docs": false,
+      "process_results_use_image": false,
+      "doc_to_visual": "<function actionlens_doc_to_visual at 0x147b144ffa60>",
+      "doc_to_text": "<function actionlens_doc_to_text at 0x147b0b15cb80>",
+      "doc_to_target": "<function get_answer_letter at 0x147b0b15d8a0>",
+      "process_results": "<function actionlens_process_results at 0x147b0b15e700>",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "actionlens_accuracy",
+          "aggregation": "<function actionlens_aggregate_results at 0x147b0b15f100>",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "max_new_tokens": 16,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "num_beams": 1,
+        "do_sample": false,
+        "until": [
+          "\n\n"
+        ]
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "score_key": "score",
+      "metadata": {
+        "version": 1.0,
+        "benchmark_name": "ActionLens",
+        "diagnostic_id": "D2",
+        "stable_id": "d2_actor_action_disambiguation",
+        "task_name": "Actor-Specific Action Disambiguation",
+        "public_display_name": "ActionLens-D2 Actor-Specific Action Disambiguation",
+        "first_mention": "ActionLens-D2 Actor-Specific Action Disambiguation (d2_actor_action_disambiguation)",
+        "media_type": "video",
+        "description": "Disambiguate similar actions by actor identity without extra context"
+      },
+      "lmms_eval_specific_kwargs": {
+        "default": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "gpt4v": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer the question with A, B, C, or D."
+        },
+        "llava": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "qwen_vl": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "qwen2_vl": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "internvl": {
+          "pre_prompt": "",
+          "post_prompt": "\nRespond with only the letter of the correct answer."
+        },
+        "videollama": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "pre_prompt": "",
+        "post_prompt": "\nAnswer with the option letter only."
+      }
+    },
+    "d3_concurrent_action_binding": {
+      "task": "d3_concurrent_action_binding",
+      "dataset_path": "json",
+      "dataset_kwargs": {
+        "data_files": {
+          "train": "hf://datasets/anonymous-dataset-submission/actionlens/dataset/3_concurrent_binding.json"
+        }
+      },
+      "test_split": "train",
+      "full_docs": false,
+      "process_results_use_image": false,
+      "doc_to_visual": "<function actionlens_doc_to_visual at 0x147b144fc7c0>",
+      "doc_to_text": "<function actionlens_doc_to_text at 0x147b144fd4e0>",
+      "doc_to_target": "<function get_answer_letter at 0x147b144fe200>",
+      "process_results": "<function actionlens_process_results at 0x147b144feac0>",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "actionlens_accuracy",
+          "aggregation": "<function actionlens_aggregate_results at 0x147b144ff7e0>",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "max_new_tokens": 16,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "num_beams": 1,
+        "do_sample": false,
+        "until": [
+          "\n\n"
+        ]
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "score_key": "score",
+      "metadata": {
+        "version": 1.0,
+        "benchmark_name": "ActionLens",
+        "diagnostic_id": "D3",
+        "stable_id": "d3_concurrent_action_binding",
+        "task_name": "Concurrent Action Binding",
+        "public_display_name": "ActionLens-D3 Concurrent Action Binding",
+        "first_mention": "ActionLens-D3 Concurrent Action Binding (d3_concurrent_action_binding)",
+        "media_type": "video",
+        "description": "Test whether models can bind concurrent actions to a single actor"
+      },
+      "lmms_eval_specific_kwargs": {
+        "default": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "gpt4v": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer the question with A, B, C, or D."
+        },
+        "llava": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "qwen_vl": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "qwen2_vl": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "internvl": {
+          "pre_prompt": "",
+          "post_prompt": "\nRespond with only the letter of the correct answer."
+        },
+        "videollama": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "pre_prompt": "",
+        "post_prompt": "\nAnswer with the option letter only."
+      }
+    },
+    "d4_directed_interaction_reasoning": {
+      "task": "d4_directed_interaction_reasoning",
+      "dataset_path": "json",
+      "dataset_kwargs": {
+        "data_files": {
+          "train": "hf://datasets/anonymous-dataset-submission/actionlens/dataset/4_interaction_reasoning.json"
+        }
+      },
+      "test_split": "train",
+      "full_docs": false,
+      "process_results_use_image": false,
+      "doc_to_visual": "<function actionlens_doc_to_visual at 0x147b15ca28e0>",
+      "doc_to_text": "<function actionlens_doc_to_text at 0x147b148a11c0>",
+      "doc_to_target": "<function get_answer_letter at 0x147b148a1ee0>",
+      "process_results": "<function actionlens_process_results at 0x147b148a2d40>",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "actionlens_accuracy",
+          "aggregation": "<function actionlens_aggregate_results at 0x147b148a3a60>",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "max_new_tokens": 16,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "num_beams": 1,
+        "do_sample": false,
+        "until": [
+          "\n\n"
+        ]
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "score_key": "score",
+      "metadata": {
+        "version": 1.0,
+        "benchmark_name": "ActionLens",
+        "diagnostic_id": "D4",
+        "stable_id": "d4_directed_interaction_reasoning",
+        "task_name": "Directed Interaction Reasoning",
+        "public_display_name": "ActionLens-D4 Directed Interaction Reasoning",
+        "first_mention": "ActionLens-D4 Directed Interaction Reasoning (d4_directed_interaction_reasoning)",
+        "media_type": "video",
+        "description": "Reason about directional interactions between people"
+      },
+      "lmms_eval_specific_kwargs": {
+        "default": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "gpt4v": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer the question with A, B, C, or D."
+        },
+        "llava": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "qwen_vl": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "qwen2_vl": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "internvl": {
+          "pre_prompt": "",
+          "post_prompt": "\nRespond with only the letter of the correct answer."
+        },
+        "videollama": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "pre_prompt": "",
+        "post_prompt": "\nAnswer with the option letter only."
+      }
+    },
+    "d5_gaze_direction_attribution": {
+      "task": "d5_gaze_direction_attribution",
+      "dataset_path": "json",
+      "dataset_kwargs": {
+        "data_files": {
+          "train": "hf://datasets/anonymous-dataset-submission/actionlens/dataset/5_gaze_detection.json"
+        }
+      },
+      "test_split": "train",
+      "full_docs": false,
+      "process_results_use_image": false,
+      "doc_to_visual": "<function actionlens_doc_to_visual at 0x147b161dade0>",
+      "doc_to_text": "<function actionlens_doc_to_text at 0x147b161db9c0>",
+      "doc_to_target": "<function get_answer_letter at 0x147b15ca0400>",
+      "process_results": "<function actionlens_process_results at 0x147b15ca1260>",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "actionlens_accuracy",
+          "aggregation": "<function actionlens_aggregate_results at 0x147b15ca1f80>",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "max_new_tokens": 16,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "num_beams": 1,
+        "do_sample": false,
+        "until": [
+          "\n\n"
+        ]
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "score_key": "score",
+      "metadata": {
+        "version": 1.0,
+        "benchmark_name": "ActionLens",
+        "diagnostic_id": "D6",
+        "stable_id": "d6_gaze_direction_attribution",
+        "task_name": "Gaze Direction Attribution",
+        "public_display_name": "ActionLens-D6 Gaze Direction Attribution",
+        "first_mention": "ActionLens-D6 Gaze Direction Attribution (d6_gaze_direction_attribution)",
+        "media_type": "video",
+        "description": "Attribute directed gaze relationships between people"
+      },
+      "lmms_eval_specific_kwargs": {
+        "default": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "gpt4v": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer the question with A, B, C, or D."
+        },
+        "llava": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "qwen_vl": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "qwen2_vl": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "internvl": {
+          "pre_prompt": "",
+          "post_prompt": "\nRespond with only the letter of the correct answer."
+        },
+        "videollama": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option letter only."
+        },
+        "pre_prompt": "",
+        "post_prompt": "\nAnswer with the option letter only."
+      }
+    }
+  },
+  "versions": {
+    "d1_transition_sensitivity": 1.0,
+    "d2_actor_action_disambiguation": 1.0,
+    "d3_concurrent_action_binding": 1.0,
+    "d4_directed_interaction_reasoning": 1.0,
+    "d5_gaze_direction_attribution": 1.0
+  },
+  "n-shot": {
+    "d1_transition_sensitivity": 0,
+    "d2_actor_action_disambiguation": 0,
+    "d3_concurrent_action_binding": 0,
+    "d4_directed_interaction_reasoning": 0,
+    "d5_gaze_direction_attribution": 0
+  },
+  "higher_is_better": {
+    "actionlens": {
+      "actionlens_accuracy": true
+    },
+    "d1_transition_sensitivity": {
+      "actionlens_accuracy": true
+    },
+    "d2_actor_action_disambiguation": {
+      "actionlens_accuracy": true
+    },
+    "d3_concurrent_action_binding": {
+      "actionlens_accuracy": true
+    },
+    "d4_directed_interaction_reasoning": {
+      "actionlens_accuracy": true
+    },
+    "d5_gaze_direction_attribution": {
+      "actionlens_accuracy": true
+    }
+  },
+  "n-samples": {
+    "d1_transition_sensitivity": {
+      "original": 194,
+      "effective": 194
+    },
+    "d2_actor_action_disambiguation": {
+      "original": 2000,
+      "effective": 2000
+    },
+    "d3_concurrent_action_binding": {
+      "original": 2000,
+      "effective": 2000
+    },
+    "d4_directed_interaction_reasoning": {
+      "original": 1611,
+      "effective": 1611
+    },
+    "d5_gaze_direction_attribution": {
+      "original": 896,
+      "effective": 896
+    }
+  },
+  "config": {
+    "model": "gemma3",
+    "model_args": "pretrained=google/gemma-4-E4B-it,max_num_frames=32,attn_implementation=sdpa",
+    "batch_size": "1",
+    "batch_sizes": [],
+    "device": null,
+    "use_cache": null,
+    "limit": null,
+    "offset": 0,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": "",
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "v0.6-19-gbd51fabc",
+  "date": "20260416_231839",
+  "task_hashes": {
+    "d1_transition_sensitivity": "0aa166f1a1d4ed3669653f5373ab64db1fe0f994de1ab8c6799ec30ffcc0ab16",
+    "d2_actor_action_disambiguation": "c53a9e50e4a738435ff01bfcfb2d817cbe483875b9dd72c25d0bbe0b69abc911",
+    "d3_concurrent_action_binding": "c53a9e50e4a738435ff01bfcfb2d817cbe483875b9dd72c25d0bbe0b69abc911",
+    "d4_directed_interaction_reasoning": "eb67b8668d9a8d4ad6aa22c2864ba4cd1a86c6e3bc5b6460ae71e8b8e6ed6fab",
+    "d5_gaze_direction_attribution": "39c1333b50b694cf3a41060f28cbd60ee85155f1d655e53179fe6835b779ceea"
+  },
+  "model_source": "gemma3",
+  "model_name": "google/gemma-4-E4B-it",
+  "model_name_sanitized": "google__gemma-4-E4B-it",
+  "system_instruction": null,
+  "system_instruction_sha": null,
+  "fewshot_as_multiturn": false,
+  "chat_template": null,
+  "chat_template_sha": null,
+  "start_time": 2978315.619627128,
+  "end_time": 2982676.48217398,
+  "total_evaluation_time_seconds": "4360.862546852324"
+}

@@ -44,11 +44,21 @@ TASKS=d1_transition_sensitivity bash examples/eval_actionlens.sh
 
 # 4. Smoke-test with 10 samples
 LIMIT=10 bash examples/eval_actionlens.sh
+
+# 5. Audit released per-sample logs and verify Table 2 accuracies across all 20 models
+python tools/audit_actionlens_logs.py
 ```
 
 The script [`examples/eval_actionlens.sh`](examples/eval_actionlens.sh) accepts environment variables to override the model, tasks, device, and output directory — see the comments at the top of the file for the full list.
 
 Task configs live in [`lmms_eval/tasks/actionlens/`](lmms_eval/tasks/actionlens/) and results are written to `outputs/actionlens/` by default.
+
+### Pre-computed Per-Sample Logs & Accuracy Verification (All 20 Models in Table 2)
+
+All per-sample prediction logs (`*_samples_d*_*.jsonl`) and aggregated result manifests (`*_results.json`) for the 20 VLMs reported in Table 2 of the paper are included directly in [`outputs/actionlens/`](outputs/actionlens/):
+- [`outputs/actionlens/full/`](outputs/actionlens/full/): All 18 open-weight models evaluated on the full 6,701-item benchmark.
+- [`outputs/actionlens/subset/`](outputs/actionlens/subset/): All 8 models (including `GPT-5.2` and `Gemini 3 Flash`) evaluated on the 1,194-item human-review subset.
+- [`tools/audit_actionlens_logs.py`](tools/audit_actionlens_logs.py): Standalone verification script that parses every per-sample JSONL file across all 20 models, audits response-format compliance, recomputes per-diagnostic (`D1–D5`) and question-micro (`Avg.`) accuracies, verifies exact agreement with Table 2, and writes [`outputs/actionlens/AUDIT_REPORT.md`](outputs/actionlens/AUDIT_REPORT.md) and [`outputs/actionlens/audit_summary.json`](outputs/actionlens/audit_summary.json).
 
 ---
 

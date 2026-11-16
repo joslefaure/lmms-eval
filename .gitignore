@@ -36,7 +36,6 @@ ipython_config.py
 lm_cache
 cache_dir
 temp/
-outputs/
 output/
 
 # Logs
